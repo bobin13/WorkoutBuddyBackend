@@ -13,12 +13,15 @@ namespace WorkoutBuddyBackend.Controllers
     public class MainController : ControllerBase
     {
         HealthEngine healthEngine = new();
+        DB db = new();
         
         [HttpGet]
         public IActionResult test(){
             int height = default;
             double weight = default;
-            return Ok(healthEngine.getBMI(height,weight));
+            
+
+            return Ok(healthEngine.getBMI(183,95));
         }
     }
 }
