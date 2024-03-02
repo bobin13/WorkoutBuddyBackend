@@ -11,7 +11,7 @@ namespace WorkoutBuddyBackend.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public required string Id { get; set; }
+        public required string id { get; set; }
 
         [BsonElement("name")]
         public required string name { get; set; }

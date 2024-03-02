@@ -21,5 +21,15 @@ namespace WorkoutBuddyBackend.Controllers
             
             return Ok(list);
         }
+
+        [HttpGet("{difficulty}")]
+        public IActionResult GetExcercisesByDifficulty(string difficulty){
+                if(difficulty == null)
+                    return GetAllExcercises();
+                
+                var list = db.GetExcercisesByDifficulty(difficulty);
+
+                return Ok(list);
+        }
     }
 }

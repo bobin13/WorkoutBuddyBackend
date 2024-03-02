@@ -21,7 +21,7 @@ namespace WorkoutBuddyBackend.Controllers
             double weight = default;
             
 
-            return Ok(healthEngine.getBMI(183,95));
+            return Ok(healthEngine.GetBMI(183,95));
         }
     }
 }

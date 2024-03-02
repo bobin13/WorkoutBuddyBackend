@@ -9,7 +9,7 @@ namespace WorkoutBuddyBackend.Helper
     public class HealthEngine
     {
 
-        public String getBMI(int height,double weight){
+        public String GetBMI(int height,double weight){
             if(height == 0 && weight == 0.0)
                 return "error";
 
@@ -26,5 +26,7 @@ namespace WorkoutBuddyBackend.Helper
             //deafult value
             return "fat";
         }
+
+        
     }
 }

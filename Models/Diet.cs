@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace WorkoutBuddyBackend.Models
@@ -10,9 +11,9 @@ namespace WorkoutBuddyBackend.Models
     {
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-        public required string Id { get; set; }
-        public string Name { get; set; }
-        public int Weight { get; set; } //weight in grams
-        public string TimeOfDay { get; set; } //what time to consume it if there is, morning-afternoon-night
+        public required string id { get; set; }
+        public string name { get; set; }
+        public int weight { get; set; } //weight in grams
+        public string timeOfDay { get; set; } //what time to consume it if there is, morning-afternoon-night
     }
 }
