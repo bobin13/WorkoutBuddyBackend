@@ -72,5 +72,30 @@ namespace WorkoutBuddyBackend.Helper
 
             return true;
         }
+
+
+//-----------------------------------------------------------------------------------------------------------------
+//----------------------------Diet Collection Methods---------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
+
+    public Boolean AddDiet(Diet diet){
+        if(diet == null)
+            return false;
+
+        var collection = GetCollection<Diet>("diets");
+        collection.InsertOne(diet);
+
+        return true;
+    }
+
+    public List<Diet> GetAllDiets(){
+        var collection = GetCollection<Diet>("diets");
+        var list = collection.Find(e => true);
+
+        return list.ToList();
+        
+    }
+
+
     }
 }
