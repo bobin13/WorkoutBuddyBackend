@@ -4,5 +4,7 @@
 1. http://{your IP or localhost}:{PortNumber}/api/Excercise
   Return : All Excercise JSON objects
 2. http://{your IP or localhost}:{PortNumber}/api/Excercise/{beginner/intermediate/expert}
-  Return : All wxcercise with difficulty levels based on what is passed from these ^
-3. 
+  Return : All Excercise with difficulty levels based on what is passed from these ^
+
+
+-------------------------Diet Controller--------------------------------------------

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WorkoutBuddyBackend.Models
 {
-    public class HealthTips
+    public class HealthTip
     {
         
     }

@@ -17,11 +17,8 @@ namespace WorkoutBuddyBackend.Controllers
         
         [HttpGet]
         public IActionResult test(){
-            int height = default;
-            double weight = default;
-            
-
-            return Ok(healthEngine.GetBMI(183,95));
+            var list = db.GetDietsByVariables(healthEngine.GetDietVariables(15.0));
+            return Ok(list);
         }
     }
 }

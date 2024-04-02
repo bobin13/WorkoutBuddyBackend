@@ -96,6 +96,12 @@ namespace WorkoutBuddyBackend.Helper
         
     }
 
+    public List<Diet> GetDietsByVariables(List<int> variables){
+        var collection = GetCollection<Diet>("diets");
+        var list = collection.Find(e => e.proteinLevel <= variables[0] && e.fatLevel <= variables[1] && e.nutritionLevel <= variables[2]);
+        return list.ToList();
+    }
+
 
     }
 }
