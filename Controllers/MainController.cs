@@ -14,10 +14,13 @@ namespace WorkoutBuddyBackend.Controllers
     {
         HealthEngine healthEngine = new();
         DB db = new();
-        
+
         [HttpGet]
-        public IActionResult test(){
-            var list = db.GetDietsByVariables(healthEngine.GetDietVariables(15.0));
+        public IActionResult test()
+        {
+            //var list = db.GetDietsByVariables(healthEngine.GetDietVariables(15.0));
+
+            var list = db.GetAllHealthTips();
             return Ok(list);
         }
     }

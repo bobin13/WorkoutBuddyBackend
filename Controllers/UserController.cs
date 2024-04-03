@@ -14,22 +14,32 @@ namespace WorkoutBuddyBackend.Controllers
     {
         DB db = new();
         [HttpGet]
-        public IActionResult GetAllUsers(){
+        public IActionResult GetAllUsers()
+        {
 
             var users = db.GetAllUsers();
             return Ok(users);
         }
 
-        [HttpPost]
-        public IActionResult AddUser([FromBody] User user){
+        [HttpGet("{id}")]
+        public IActionResult GetUserById(string id)
+        {
+            Console.WriteLine(id);
+            var user = db.GetUserById(id);
+            return Ok(user);
+        }
 
-            if(user == null)
+        [HttpPost]
+        public IActionResult AddUser([FromBody] User user)
+        {
+
+            if (user == null)
                 return BadRequest("Invalid user object!");
-            
-            if( db.AddUser(user))
+
+            if (db.AddUser(user))
                 return Ok(user);
 
-            return BadRequest("Error occured while adding user.");           
+            return BadRequest("Error occured while adding user.");
         }
     }
 }

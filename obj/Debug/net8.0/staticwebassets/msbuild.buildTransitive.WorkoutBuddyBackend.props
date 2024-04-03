@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\buildMultiTargeting\WorkoutBuddyBackend.props" />
+  <Import Project="../buildMultiTargeting/WorkoutBuddyBackend.props" />
 </Project>

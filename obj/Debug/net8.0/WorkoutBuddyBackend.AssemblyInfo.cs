@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkoutBuddyBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6dbe53e74917d777a3692033495c8e6cf42da9dc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WorkoutBuddyBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WorkoutBuddyBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
