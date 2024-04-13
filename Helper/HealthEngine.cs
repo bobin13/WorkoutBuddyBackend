@@ -92,7 +92,7 @@ namespace WorkoutBuddyBackend.Helper
             var dietVaribles = GetDietVariables(bmi);
             var list = db.GetDietsByVariables(dietVaribles);
 
-            return null;
+            return list.ToList();
 
         }
 

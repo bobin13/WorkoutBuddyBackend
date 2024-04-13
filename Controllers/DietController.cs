@@ -13,27 +13,32 @@ namespace WorkoutBuddyBackend.Controllers
     public class DietController : ControllerBase
     {
         DB db = new();
+        HealthEngine healthEngine = new();
 
         [HttpGet("{bmi}")]
-        public IActionResult GetInitialDiet(int bmi){
-            return Ok();
+        public IActionResult GetInitialDiet(double bmi)
+        {
+            var diets = healthEngine.GetDiets(bmi);
+            return Ok(diets);
         }
 
         [HttpGet()]
-        public IActionResult GetAll(){
+        public IActionResult GetAll()
+        {
             var list = db.GetAllDiets();
             return Ok(list);
         }
 
         [HttpPost]
-        public IActionResult AddDiet([FromBody] Diet diet){
-            if(diet == null)
+        public IActionResult AddDiet([FromBody] Diet diet)
+        {
+            if (diet == null)
                 return BadRequest();
-            
+
             db.AddDiet(diet);
 
             return Ok(diet);
-            
+
         }
     }
 }
