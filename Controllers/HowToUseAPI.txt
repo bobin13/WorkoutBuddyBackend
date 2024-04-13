@@ -8,3 +8,18 @@
 
 
 -------------------------Diet Controller--------------------------------------------
+
+
+
+
+
+
+
+---------------------User Controller------------------------
+
+1. http://{your IP or localhost}:{PortNumber}/api/User
+  returns: All users as a JSON Array
+2. http://{your IP or localhost}:{PortNumber}/api/User/{userId}
+  returns: returns user with given id
+3. http://{your IP or localhost}:{PortNumber}/api/User/healthTips/{userId}
+  returns: All health tips for a user

@@ -106,8 +106,9 @@ namespace WorkoutBuddyBackend.Helper
         }
 
         //returns all HealthTips from DataBase
-        public List<HealthTip> GenerateHealthTips(double bmi)
+        public List<HealthTip> GenerateHealthTips()
         {
+
             //returning 5 random Tips for now. Logic to be implemented.
             Random random = new();
 

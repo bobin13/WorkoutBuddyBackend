@@ -13,6 +13,7 @@ namespace WorkoutBuddyBackend.Controllers
     public class UserController : ControllerBase
     {
         DB db = new();
+        HealthEngine healthEngine = new HealthEngine();
         [HttpGet]
         public IActionResult GetAllUsers()
         {
@@ -36,10 +37,23 @@ namespace WorkoutBuddyBackend.Controllers
             if (user == null)
                 return BadRequest("Invalid user object!");
 
+            user.healthTips = healthEngine.GenerateHealthTips();
             if (db.AddUser(user))
                 return Ok(user);
 
             return BadRequest("Error occured while adding user.");
+        }
+
+        [HttpGet("healthTips/{id}")]
+        public IActionResult GetUserHealthTips(string id)
+        {
+            var user = db.GetUserById(id);
+            if (user == null)
+                return NotFound("User Not Found!");
+            if (user.healthTips == null || user.healthTips.Count == 0)
+                user.healthTips = healthEngine.GenerateHealthTips();
+
+            return Ok(user.healthTips);
         }
     }
 }

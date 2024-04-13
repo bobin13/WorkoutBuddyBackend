@@ -16,13 +16,14 @@ namespace WorkoutBuddyBackend.Models
         [BsonElement("name")]
         public required string name { get; set; }
         public required string username { get; set; }
-        public string  password { get; set; }
+        public string password { get; set; }
         public required string email { get; set; }
         public int height { get; set; }
         public double weight { get; set; }
         public double desiredWeight { get; set; }
-        
+
         public List<Excercise> excercises { get; set; }
-        public  List<Diet> diets { get; set; }
+        public List<Diet> diets { get; set; }
+        public List<HealthTip> healthTips { get; set; }
     }
 }
